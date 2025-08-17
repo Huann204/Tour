@@ -5,14 +5,17 @@ import Card from "../assets/img/Cart.png";
 import Menu from "../assets/img/Menu.png";
 import Caret from "../assets/img/caret.png";
 import { FaCaretDown } from "react-icons/fa";
-const Header = () => {
+const Header = (prop) => {
   const [menu, setMenu] = useState(false);
 
   const [domestic, setDomestic] = useState(false);
   const [foreign, setForeign] = useState(false);
 
   return (
-    <div className="bg-white flex items-center justify-between p-4 lg:px-[91px] lg:py-3">
+    <div
+      className="bg-white flex items-center justify-between p-4 lg:px-[91px] lg:py-3"
+      {...prop}
+    >
       <div className="cursor-pointer lg:hidden" onClick={() => setMenu(!menu)}>
         <img src={Menu} alt="" />
       </div>

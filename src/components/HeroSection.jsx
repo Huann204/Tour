@@ -14,13 +14,14 @@ const locations = [
   { name: "Thái Lan", tours: 40, img: Japan },
 ];
 
-const HeroSection = () => {
+const HeroSection = (prop) => {
   const [focus, setFocus] = useState(false);
   const [valueInput, setValueInput] = useState("");
 
   return (
     <div
       className="w-full flex justify-center bg-cover bg-center bg-no-repeat h-[716px] lg:h-[611px] px-4 pt-[106px]"
+      {...prop}
       style={{ backgroundImage: `url(${Background})` }}
     >
       <div className="lg:w-[768px]">
