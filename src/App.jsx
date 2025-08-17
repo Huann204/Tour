@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import PromoSection from "./components/PromoSection";
 import TopHeader from "./components/TopHeader";
+import TourSection from "./components/TourSection";
 
 function App() {
   useEffect(() => {
@@ -20,9 +21,11 @@ function App() {
     <div className="App font-Lexend">
       <TopHeader />
       <Header />
-      <HeroSection data-aos="zoom-in" />
+      <HeroSection />
       <PromoSection data-aos="fade-up" />
       <BannerSlider data-aos="flip-left" />
+      <TourSection aos="fade-right" title="Tour Trong Nước" />
+      <TourSection aos="fade-right" title="Tour Nước Ngoài" />
     </div>
   );
 }
