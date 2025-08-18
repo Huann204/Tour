@@ -9,6 +9,7 @@ import PromoSection from "./components/PromoSection";
 import TopHeader from "./components/TopHeader";
 import TourSection from "./components/TourSection";
 import BlogSection from "./components/BlogSection";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
       <TourSection aos="fade-right" title="Tour Trong Nước" />
       <TourSection aos="fade-right" title="Tour Nước Ngoài" />
       <BlogSection data-aos="flip-left" />
+      <Footer />
     </div>
   );
 }
