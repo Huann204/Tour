@@ -8,6 +8,7 @@ import HeroSection from "./components/HeroSection";
 import PromoSection from "./components/PromoSection";
 import TopHeader from "./components/TopHeader";
 import TourSection from "./components/TourSection";
+import BlogSection from "./components/BlogSection";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
       <BannerSlider data-aos="flip-left" />
       <TourSection aos="fade-right" title="Tour Trong Nước" />
       <TourSection aos="fade-right" title="Tour Nước Ngoài" />
+      <BlogSection data-aos="flip-left" />
     </div>
   );
 }
