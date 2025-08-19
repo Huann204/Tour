@@ -8,7 +8,7 @@ import {
 import Logo from "../assets/img/Logo.png";
 const Footer = () => {
   return (
-    <div className="bg-[#CCD1D2] mt-11 py-10 rounded-xl">
+    <div className="bg-[#CCD1D2] mt-11 py-10 rounded-xl px-5">
       <div className="bg-primary rounded-2xl px-4  text-center p-5 lg:mx-[91px] lg:flex lg:items-center lg:justify-between">
         <h2 className="font-bold text-lg text-white lg:w-96 lg:mr-6">
           Đăng ký ngay để không bỏ lỡ các chương trình của chúng tôi

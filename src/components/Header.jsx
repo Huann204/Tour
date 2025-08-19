@@ -5,6 +5,7 @@ import Card from "../assets/img/Cart.png";
 import Menu from "../assets/img/Menu.png";
 import Caret from "../assets/img/caret.png";
 import { FaCaretDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Header = (prop) => {
   const [menu, setMenu] = useState(false);
 
@@ -13,7 +14,7 @@ const Header = (prop) => {
 
   return (
     <div
-      className="bg-white flex items-center justify-between p-4 lg:px-[91px] lg:py-3"
+      className="bg-white flex items-center justify-between sticky z-[999] p-4 lg:px-[91px] lg:py-3"
       {...prop}
     >
       <div className="cursor-pointer lg:hidden" onClick={() => setMenu(!menu)}>
@@ -111,11 +112,13 @@ const Header = (prop) => {
         </>
       )}
       <div className="cursor-pointer">
-        <img
-          className=" object-cover lg:w-[218px] lg:h-[50px]"
-          src={Logo}
-          alt=""
-        />
+        <Link to={"/"}>
+          <img
+            className=" object-cover lg:w-[218px] lg:h-[50px]"
+            src={Logo}
+            alt=""
+          />
+        </Link>
       </div>
       <div className="hidden lg:block">
         <ul className="flex gap-10 items-center font-medium">
