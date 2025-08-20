@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BannerTour from "../assets/img/BannerTour.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaEye, FaFilter, FaSquareArrowUpRight } from "react-icons/fa6";
@@ -15,6 +15,9 @@ import {
 import TourSection from "./TourSection";
 import { AiFillCaretDown } from "react-icons/ai";
 const ForeignTourPage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <div className="">
@@ -23,12 +26,12 @@ const ForeignTourPage = () => {
 
           <div className="absolute lg:pl-[91px]  rounded-xl text-white p-4 flex flex-col justify-end w-full h-full bottom-0 left-0 bg-[linear-gradient(180deg,rgba(69,2,199,0)_58.85%,rgba(69,2,199,0.9)_100%)]">
             <h2 className="font-medium text-xl mb-2 lg:text-[32px]">
-              Tour Nước Ngoài
+              Tour Trong Nước
             </h2>
             <div className="flex gap-2 items-center text-xs lg:text-base">
               <a href="">Trang Chủ</a>
               <MdKeyboardDoubleArrowRight />
-              <a href="">Tour Nước Ngoài</a>
+              <a href="">Tour Trong Nước</a>
             </div>
           </div>
         </div>
@@ -134,7 +137,7 @@ const ForeignTourPage = () => {
             </div>
             <div className="lg:col-span-8">
               <h1 className="text-primary font-semibold text-2xl">
-                Tour Nước Ngoài
+                Tour Trong Nước
               </h1>
               <p className="text-sm mt-[10px] text-[#747578]">
                 Du lịch Châu Á: là châu lục lớn và đông dân nhất thế giới. Châu
