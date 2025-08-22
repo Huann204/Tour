@@ -7,7 +7,6 @@ import Star from "../assets/img/Star.png";
 import { FaTicketSimple, FaTruckPlane } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 
-import langbac from "../assets/img/langbac.png";
 import { DetailTour } from "../services/DetailTour";
 import { useParams } from "react-router-dom";
 
@@ -63,7 +62,6 @@ const TourDetailPage = () => {
         </div>
       </div>
       <div className="px-4 lg:grid lg:grid-cols-10 lg:mx-[91px]">
-        {/* Sticky Sidebar - Chuyến đi của bạn */}
         <div className="rounded-[10px] bg-white shadow-[0px_1.75px_3.51px_0px_#0000001F] p-[15px] mt-11 gap-[15px] lg:col-span-3 lg:order-2 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto">
           <h2 className="text-primary text-base mb-4 font-semibold">
             Chuyến Đi Của Bạn
@@ -238,7 +236,9 @@ const TourDetailPage = () => {
         </div>
         <div className="lg:col-span-7 order-3">
           <div className="mt-8 p-[15px] shadow-[0px_1.75px_3.51px_0px_#0000001F]">
-            <h3 className="text-xl font-semibold mb-4">Thông Tin Tour</h3>
+            <h3 className="text-xl font-semibold mb-4 text-primary">
+              Thông Tin Tour
+            </h3>
             <p className="text-gray-700 leading-relaxed mb-6">
               {detailTour.description}
             </p>
@@ -267,7 +267,7 @@ const TourDetailPage = () => {
                     <p>{item.content}</p>
                     <div>
                       <img
-                        src={langbac}
+                        src={`http://localhost:5000/${item.image}`}
                         className="object-cover w-full mt-[10px]"
                         alt=""
                       />
