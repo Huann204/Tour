@@ -8,9 +8,28 @@ import { FaTicketSimple, FaTruckPlane } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 
 import { DetailTour } from "../services/DetailTour";
-import { useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useCart } from "./CartContext";
 const TourDetailPage = () => {
+  const { addToCart } = useCart();
+  const handleAddToCart = () => {
+    toast.success("Đã thêm vào giỏ hàng");
+    const item = {
+      id: detailTour.code,
+      title: detailTour.title,
+      image: detailTour.image,
+      departureDate: detailTour.departureDate,
+      adults,
+      children,
+      babies,
+      priceAdult: detailTour.prices?.adult || 0,
+      priceChild: detailTour.prices?.child || 0,
+      priceBaby: detailTour.prices?.baby || 0,
+      total,
+    };
+    addToCart(item);
+  };
   const { code } = useParams();
   const [visible, setVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -201,9 +220,13 @@ const TourDetailPage = () => {
                     </span>
                   </div>
                 </div>
-                <div className="w-full text-base font-semibold bg-primary h-11 text-white flex items-center justify-center rounded-lg cursor-pointer">
+                <Link
+                  to={"/cart"}
+                  onClick={handleAddToCart}
+                  className="w-full text-base font-semibold bg-primary h-11 text-white flex items-center justify-center rounded-lg cursor-pointer"
+                >
                   Thêm Vào giỏ hàng
-                </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -6,7 +6,11 @@ import Menu from "../assets/img/Menu.png";
 import Caret from "../assets/img/caret.png";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
+
 const Header = (prop) => {
+  const { cart } = useCart();
+
   const [menu, setMenu] = useState(false);
 
   const [domestic, setDomestic] = useState(false);
@@ -171,17 +175,22 @@ const Header = (prop) => {
           <li>Liên Hệ</li>
         </ul>
       </div>
-      <div className="cursor-pointer  flex items-center">
-        <img className=" object-cover" src={Card} alt="" />
-        <div
-          className="relative before:content-[''] before:inline-block before:w-0 before:h-0
-         before:border-t-[1.8px] before:border-b-[1.8px] before:border-r-[3.7px]
-         before:border-t-transparent before:border-b-transparent before:border-r-[#FF3904]
-         before:absolute before:left-[-3.5px] before:top-[5.5px] w-[15px] h-[13px] text-white flex items-center justify-center  bg-[#FF3904]  ml-1 font-normal text-[10px] rounded-[3px]"
-        >
-          1<div></div>
+      <Link to={"/cart"}>
+        <div className="cursor-pointer  flex items-center">
+          <img className=" object-cover" src={Card} alt="" />
+          {cart.length > 0 && (
+            <div
+              className="relative before:content-[''] before:inline-block before:w-0 before:h-0
+           before:border-t-[1.8px] before:border-b-[1.8px] before:border-r-[3.7px]
+           before:border-t-transparent before:border-b-transparent before:border-r-[#FF3904]
+           before:absolute before:left-[-3.5px] before:top-[5.5px] w-[15px] h-[13px] text-white flex items-center justify-center  bg-[#FF3904]  ml-1 font-normal text-[10px] rounded-[3px]"
+            >
+              {cart.length}
+              <div></div>
+            </div>
+          )}
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
